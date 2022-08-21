@@ -48,11 +48,11 @@ class YoutubeMusicApi {
         const headers = Object.assign({
             'x-origin': this.client.defaults.baseURL,
             'X-Goog-Visitor-Id': this.ytcfg.VISITOR_DATA || '',
-            'X-YouTube-Client-Name': this.ytcfg.INNERTUBE_CONTEXT_CLIENT_NAME,
-            'X-YouTube-Client-Version': this.ytcfg.INNERTUBE_CLIENT_VERSION,
-            'X-YouTube-Device': this.ytcfg.DEVICE,
-            'X-YouTube-Page-CL': this.ytcfg.PAGE_CL,
-            'X-YouTube-Page-Label': this.ytcfg.PAGE_BUILD_LABEL,
+            'X-YouTube-Client-Name': this.ytcfg.INNERTUBE_CONTEXT_CLIENT_NAME || '',
+            'X-YouTube-Client-Version': this.ytcfg.INNERTUBE_CLIENT_VERSION || '',
+            'X-YouTube-Device': this.ytcfg.DEVICE || '',
+            'X-YouTube-Page-CL': this.ytcfg.PAGE_CL || '',
+            'X-YouTube-Page-Label': this.ytcfg.PAGE_BUILD_LABEL || '',
             'X-YouTube-Utc-Offset': String(-new Date().getTimezoneOffset()),
             'X-YouTube-Time-Zone': new Intl.DateTimeFormat().resolvedOptions().timeZone
         }, this.client.defaults.headers)
